@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Registro de Evento</title>
+    <link rel="stylesheet" href="Registrar.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1 id="Registrado"></h1>
+        <h2><center>Formulario de Registro</center></h2>
+        <form onsubmit=""id="event-form" action="Registrado.html"method="post">
+            <label >Nombre del responsable:</label>
+            <input type="text" id="responsable" >
+            
+            <label >Correo del responsable:</label>
+            <input type="email" id="correo" >
+            <label for="password">Contraseña del responsable:</label>
+            <input type="password" id="password" >
+
+
+            <label >Nombre del evento:</label>
+            <input type="text" id="nombre-evento" >
+
+            <label >Fecha del evento:</label>
+            <input type="date" id="fecha-evento" >
+
+            <label >Cantidad de invitados:</label>
+            <input type="number" id="cantidad-invitados" max="10">
+
+            <button type="submit" id="submit-button">Registrar Evento</button>
+        </form>
+    
+
+    </div>
+
+</body>
+<script>
+    let eventform = document.getElementById("event-form");
+
+eventform.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  
+  let correo = document.getElementById("correo").value;
+
+  let usuario = {
+    correo: correo
+  };
+
+  
+  let Usuario = JSON.stringify(usuario);
+
+
+  localStorage.setItem("usuario", Usuario);
+
+  console.log("Usuario guardado en LocalStorage.");
+});
+</script>
+    
+   </Html>

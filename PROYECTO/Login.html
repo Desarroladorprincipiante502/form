@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Formulario</title>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Ingresar al Evento</h1>
+    <form onsubmit="return validar ()" id="login-form" action="Registrado.html" method="get">
+      <label >Usuario:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label >Contraseña:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Ingresar</button>
+    </form>
+    <p id="incorrecto"></p>
+    <script>
+      function validar (){  
+        
+        let Usuario = document.getElementById("username");
+        let contreseña = document.getElementById("passsword");
+         let estaCorrecto = true;
+         let p = document.getElementById("incorrecto");
+         if (username.value == ""){
+          p.innerHTML = "<h2>El username no debe Quedar vacio<h2/>";
+            estaCorrecto = false;
+         }
+         if (username.value == ""){
+          p.innerHTML = "<h2>El password no debe Quedar vacio<h2/>";
+            estaCorrecto = false;
+         }
+      }
+      console.log(estaCorrecto);
+      return estaCorrecto
+        </script>
+  </div>
+</body>
+</html>

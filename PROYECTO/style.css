@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    background-image: url("https://th.bing.com/th/id/R.66df4bdac88c64495df3f9d404802cd2?rik=kgEGhyvXKY1eJA&riu=http%3a%2f%2fwww.exceptnothing.com%2fwp-content%2fuploads%2f2011%2f12%2fcolorPulse_V4.jpg&ehk=Q2NRXYNVJ7ayC7sJvFsWyxBDoaPqNu72BSiLe0Y6kNA%3d&risl=&pid=ImgRaw&r=0")
+    
+}
+
+  
+  .login-container {
+    background-color:aqua;
+    padding: 50px;
+    border-radius: 10px;
+    text-align: center;
+
+  }
+  
+  h1 {
+    margin-bottom: 22px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    color: black;
+    font-size: 23px;
+  }
+  
+  input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+   

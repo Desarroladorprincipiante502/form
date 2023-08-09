@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Invitados</title>
+  <link rel="stylesheet" href="list.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Registro de Invitados</h1>
+    <h2>Evento El Mundo De La Programación</h2>
+    <form id="registro-form">
+      <label >Nombre de Persona o Familia:</label>
+      <input type="text" id="nombre" required>
+
+      <label >Cantidad de Personas:</label>
+      <input type="number" id="cantidad" max="10">
+
+      <label >Observaciones:</label>
+      <textarea id="observaciones"></textarea>
+
+      <button type="submit">Registrar Invitado</button>
+    </form>
+    
+    <h3>Lista de Invitados</h3>
+    <table id="tabla-invitados">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Cantidad</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <script >
+const registroForm = document.getElementById("registro-form");
+const tablaInvitados = document.getElementById("tabla-invitados");
+const invitados = JSON.parse(localStorage.getItem("invitados")) || [];
+
+registroForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const nombre = document.getElementById("nombre").value;
+  const cantidad = document.getElementById("cantidad").value;
+  const observaciones = document.getElementById("observaciones").value;
+
+  invitados.push({ nombre, cantidad, observaciones, confirmado: false });
+  localStorage.setItem("invitados", JSON.stringify(invitados));
+  actualizarTablaInvitados();
+
+  registroForm.reset();
+});
+
+function actualizarTablaInvitados() {
+  tablaInvitados.querySelector("tbody").innerHTML = "";
+
+  invitados.forEach((invitado, index) => {
+    const fila = document.createElement("tr");
+    fila.innerHTML = `
+      <td>${invitado.nombre}</td>
+      <td>${invitado.cantidad}</td>
+      <td>
+        <button class="confirmar" onclick="confirmarInvitado(${index})">Confirmar</button>
+        <button class="eliminar" onclick="eliminarInvitado(${index})">Eliminar</button>
+      </td>
+    `;
+
+    if (invitado.confirmado) {
+      fila.querySelector(".confirmar").disabled = true;
+      fila.innerHTML += '<td><span>👍</span></td>';
+    }
+
+    tablaInvitados.querySelector("tbody").appendChild(fila);
+  });
+}
+
+function confirmarInvitado() {
+  invitados.confirmado = true;
+  localStorage.setItem("invitados", JSON.stringify(invitados));
+  actualizarTablaInvitados();
+}
+
+function eliminarInvitado() {
+  invitados.splice( 1);
+  localStorage.setItem("invitados", JSON.stringify(invitados));
+  actualizarTablaInvitados();
+}
+
+// Cargar invitados guardados al cargar la página
+document.addEventListener("DOMContentLoaded", function() {
+  actualizarTablaInvitados();
+});
+  </script>
+</body>
+</html>
+  
+
+
+

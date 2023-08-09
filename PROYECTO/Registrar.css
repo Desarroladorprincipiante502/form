@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("https://th.bing.com/th/id/R.66df4bdac88c64495df3f9d404802cd2?rik=kgEGhyvXKY1eJA&riu=http%3a%2f%2fwww.exceptnothing.com%2fwp-content%2fuploads%2f2011%2f12%2fcolorPulse_V4.jpg&ehk=Q2NRXYNVJ7ayC7sJvFsWyxBDoaPqNu72BSiLe0Y6kNA%3d&risl=&pid=ImgRaw&r=0");
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+h1 {
+    padding: 10px;
+    background-color:darkgoldenrod;
+ }
+
+.container {
+    background-color:skyblue;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    padding-top: 20px;
+    color: black;
+    font-size: 20px;
+}
+
+
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #0056b3;
+    text-align: center;
+    padding-right: 50pxs;
+}
+
+.hidden {
+    display: none;
+}

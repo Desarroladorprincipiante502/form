@@ -1,0 +1,51 @@
+body {
+    font-family: cursive;
+    padding-top: 200px;
+    display: flex;
+    align-items: center;;
+    background-color:sandybrown;
+    border-style:relative;
+    justify-content: center;
+    
+  
+}
+h1 {
+    color: black;
+    font-size: 33px;
+    padding: 20px;
+    color: blue;
+    margin: 20px;
+
+}
+h2 #preguntas {
+    color: chocolate;
+    display: flex;
+    border-right: 30pt;
+
+}
+.container {
+padding: 20px;
+align-items: center;
+flex-wrap: nowrap;
+justify-content: center;
+  
+}
+button {
+    background-color: aqua;
+    font-size: 23px;
+    cursor: pointer;
+    margin-right: 42pt;
+    margin-right: 24px;
+     }
+    
+    
+   
+  
+  
+  
+  
+  
+  
+  
+  
+
